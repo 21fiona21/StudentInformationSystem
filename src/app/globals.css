@@ -1,0 +1,32 @@
+@tailwind base; /* Import Tailwind base styles */
+@tailwind components; /* Import Tailwind component classes */
+@tailwind utilities; /* Import Tailwind utility classes */
+
+/* Define default light mode colors */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Inline theme variables using custom CSS variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Override colors for dark mode preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Apply background and text color globally, set default font */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
